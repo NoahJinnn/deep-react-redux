@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { storeContext } from "./Provider";
+
 export const connect = (mapStateToProps, mapDispatchToProps) => {
   return (Component) => {
     const store = useContext(storeContext);

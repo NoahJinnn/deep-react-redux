@@ -1,9 +1,11 @@
 // Pure function
 // Return next state
 
-const initState = {};
+const initState = {
+  user: "ntcd",
+};
 
-const loginReducer = (prevState = initState, action) => {
+export const loginReducer = (prevState = initState, action) => {
   const { type, payload } = action;
   switch (type) {
     case "ACTION":

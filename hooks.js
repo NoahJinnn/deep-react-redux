@@ -1,3 +1,5 @@
+import { storeContext } from "./Provider";
+
 export const useSelector = (getState) => {
   const store = useContext(storeContext);
   return getState(store.getState());
