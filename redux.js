@@ -1,8 +1,14 @@
-import { createStore, combineReducers } from "./createStore";
+import { createStore, combineReducers, applyMiddleware } from "./createStore";
 import { loginReducer } from "./reducer";
 
 const reducers = {
   loginState: loginReducer,
 };
 
-export const store = createStore(combineReducers(reducers));
+const initState = {};
+const middlewares = [];
+export const store = createStore({
+  reducer: combineReducers(reducers),
+  initState,
+  enhancer: applyMiddleware(middlewares),
+});
